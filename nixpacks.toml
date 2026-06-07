@@ -1,0 +1,11 @@
+[providers]
+node = true
+
+[phases.setup]
+nixPkgs = ["...", "chromium", "nss", "freetype", "harfbuzz", "pango", "atk", "cairo", "gdk-pixbuf", "glib", "gtk3", "xorg.libX11", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXext", "xorg.libXfixes", "xorg.libXrandr", "xorg.libxcb", "mesa", "alsa-lib", "expat"]
+
+[phases.build]
+cmds = ["cd backend && npm install"]
+
+[start]
+cmd = "cd backend && node server.js"
